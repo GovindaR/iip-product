@@ -1,0 +1,11 @@
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == tab {
+        @media only screen and (max-width: 70em) { @content };     //1023px
+    }
+   
+    @if $breakpoint == tab {
+        @media only screen and (max-width: 70em) { @content };     //1023px
+    }
+}
+
