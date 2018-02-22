@@ -18,12 +18,23 @@
  
 </head>
 <body>
-    <!-- header start -->
+    <!-- header start btn -->
+
+    <main>
+        <div class="centralizer clearfix">
+               <div>
+
+               </div>
+              
+               <input type="text" size="20" placeholder="Search">
+               <span></span>
+
+               
+        </div>
+    </main>
+<!-- header start -->
     <header>
         <div class="centralizer clearfix">
-            <div class="logo">
-                <img src="images/logo.png" alt="logo">
-            </div>
 
             <div class="search clearfix">
                     <div>
@@ -35,11 +46,17 @@
                                 supplying reliability
                     </p>
             </div>
+
+            <div class="logo">
+                    <img src="images/logo.png" alt="logo">
+                </div>
         </div>
     </header>
     <!-- header end -->
 
     <!-- nav bar start -->
+        <input type="checkbox" id="navi-toggle" class="nav">
+        <label for="navi-toggle"><div class="nav__btn"></div></label>
     <nav>
         <div class="centralizer">
             <a href="#">about</a>
@@ -77,7 +94,7 @@
                 </div>
 
             </div>
-            <div class="banner__right">
+            <div class="banner__right clearfix">
                 <div class="banner__right--top clearfix">
                     <div>
                         <img src="images/customize.png" alt="cust">
@@ -155,10 +172,8 @@
                         </div>
                             <div class="clearfix">
                                 <div>
-                                    <h3>Sample of a Very, Very, Very Long<img src="images/share.png" alt="share"> 
-                                        <br>
-                                            News Headline</h3>
-                                    <p><i>August 01</i>, 2013
+                                    <h3>  Sample of a Very, Very Long News Headline <img src="images/share.png" alt="share"></h3>
+                                    <p><i>August 01</i>,2013
                                     </p>
                                 </div>
                                 
@@ -243,6 +258,9 @@
                     </div>
             </div>
             </div>
+            <p class="supply">
+                    supplying reliability
+                </p>
         </div>
     </section>
     
@@ -250,9 +268,8 @@
     <!-- footer start -->
     <footer>
         <div class="centralizer clearfix">
-                <p>&copy;2013 COPYRIGHT INDUSTRIAL PAPER PRODUCTS, INC. <span class="slas-span">|</span><span><a href="#">ALL RIGHTS RESERVED</a>|<a href="#">PRIVACY POLICY</a>|<a href="#">SITE MAP</a></span> 
-                </p>
-                <div class="social-links">
+
+            <div class="social-links">
                     <div class="social">
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -260,6 +277,11 @@
                     </div>
                     <p>developed by <img src="images/devloper.png" alt="dev"></p>
                 </div>
+                <p>&copy;2013 COPYRIGHT
+                    <br> INDUSTRIAL PAPER PRODUCTS, INC. <span class="slas-span"><small>|</small></span><span><a href="#">ALL RIGHTS RESERVED</a><small>|</small><a href="#">PRIVACY POLICY</a><small>|</small><a href="#">SITE MAP</a></span> 
+                </p>
+
+                <p class="dev">developed by <img src="images/devloper1.png" alt="dev"></p>
         </div>
     </footer>
     <script src="owl/jquery.min.js"></script>

@@ -14,20 +14,126 @@ body{
 .centralizer{
     max-width: 1024px;
     margin: auto;
-
-    @include respond(tab) {
-       width: 768px;
-    }
 }
+
+
+
+////////////////////////////////
+//main
+
+main{
+    display: none;
+    @include respond(mobile) {
+       display: block;
+     }
+            .centralizer{
+                position: relative;
+
+                div{
+                    float: left;
+                    background: #00477e;
+                    width: 47px;
+                    height: 37px;
+                    position: relative;
+            }
+
+                input{
+                float: right;
+                width:82%;
+                height: 31px;
+                }
+
+            span{
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: #55ba47 url(../images/search.png) right center no-repeat;
+                padding: 18px 3px 18px 38px;
+                color: #fff;
+                width: 42px;
+                -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+            }
+        }
+
+}
+.nav{
+    display: none;
+}
+
+@include respond(mobile) {
+
+        .nav__btn{
+            top: 16px;
+            left: 13px;
+            &,
+            &::before,
+            &::after{
+                position: absolute;
+                z-index: 10;
+                content: '';
+                width: 20px;
+                height: 2px;
+                background: #fff;
+                -webkit-transition: 0.2s;
+                transition: 0.2s;
+            }
+
+            &::before{
+                top: -6px;
+                right: 0;
+            }
+
+            &:hover::before{
+                top: -8px;
+            }
+            &::after{
+                top: 6px;
+                right: 0;
+            }
+            &:hover::after{
+                top: 8px;
+            }
+        }
+        
+        .nav:checked ~ nav {
+            opacity: 1;
+            visibility: visible;
+        }
+
+         .nav:checked + label > .nav__btn{
+            background: transparent;
+        }
+        .nav:checked + label > .nav__btn::before {
+            display: block;
+            top: 0;
+            -webkit-transform: rotate(135deg);
+                    transform: rotate(135deg);
+        }
+        .nav:checked + label > .nav__btn::after {
+            display: block;
+            top: 0;
+            -webkit-transform: rotate(-135deg);
+                    transform: rotate(-135deg);
+        }
+    }
+
 
 /////////////////////////////
 //Header
 
 header{
     .centralizer{
+
         .logo{
             float: left;
             margin: 18px 10px 0 32px;
+
+            @include respond(mobile) {
+                float: none;
+                text-align: center;
+                margin: 10px 0;
+             }
 
             
         }
@@ -42,6 +148,15 @@ header{
                             font-size: 13px;
                             margin-top: 12px;
                             margin-right: 18px;
+
+                            @include respond(mobile) {
+                                display:block;
+                                
+                             }
+
+                            @include respond(mobile) {
+                                display: none;
+                             }
                         }
                             input{
                                 background: #55ba47 url(../images/search.png) right center no-repeat;
@@ -63,6 +178,11 @@ header{
                                 @include respond(tab) {
                                     margin-right: 20px;
                                  }
+
+                                 @include respond(mobile) {
+                                    display: none;
+                                    
+                                 }
                             
                         }
                     }
@@ -73,6 +193,11 @@ header{
                 font-weight: lighter;
                 font-size: 29px;
                 color: #81c979;
+
+                @include respond(mobile) {
+                    display: none;
+                    
+                 }
             }
         }
     }
@@ -85,7 +210,17 @@ nav{
     margin-top: 32px;
     background-color: #002d5b;
 
+    @include respond(mobile) {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+     }
+
     .centralizer{
+        
         a{
             font-family: 'Open Sans';
             color: #fff;
@@ -98,11 +233,23 @@ nav{
             -webkit-transition: all .5s;
             transition: all .5s;
 
+            @include respond(mobile) {
+                display: block;
+                width: 100%;
+             }
+             &:first-child{
+                @include respond(mobile) {
+                    margin-left: 18px;
+                 }
+             }
+
             &:not(:first-child){
                 margin-left: 66px;
+
                 @include respond(tab) {
                     margin-left: 18px;
                  }
+
             }
 
             &.active{
@@ -113,13 +260,20 @@ nav{
                     padding:11px 12px 12px 12px;
                     margin-left: 10px;
                  }
+                 @include respond(mobile) {
+                    display: block;
+                    width: 100%;
+                    padding: 0 0 0 10px;
+                    margin: 0;
+                    -webkit-box-sizing: border-box;
+                            box-sizing: border-box;
+
+                 }
             }
             &:hover{
                 color: #81c979;
             }
-            @include respond(tab) {
-                margin-left: 18px;
-             }
+
              &:last-child{
                 @include respond(tab) {
                     margin-left: 18px;
@@ -142,18 +296,34 @@ nav{
      }
 
        &__left{
-           width: 245px;
+           width: 24%;
            float: left;
            @include respond(tab) {
-            width: 307px;
+            width: 40%;
+         }
+
+         @include respond(mobile) {
+            width: 100%;
+            margin-bottom: 12px
          }
            div{
                border-bottom: 1px solid #053b5b;
                padding: 32px 0;
 
+               &:hover{
+                @include respond(tab) {
+                    background: #00518a;
+                 }
+               }
+
                @include respond(tab) {
                 padding: 47px 0 47px 53px;
              }
+
+             @include respond(mobile) {
+                padding: 12px 0 12px 17px;
+             }
+             
 
                &:last-child{
                    border: none;
@@ -195,18 +365,35 @@ nav{
        &__right{
            float: left;
            background:  #005497;
-           width: 747px;
+           width: 76%;
            padding:16px 16px 0 16px;
-           
+           -webkit-box-sizing: border-box;
+                   box-sizing: border-box;
+           margin-bottom: 16px;
+
+           @include respond(tab) {
+                    width: 60%;
+                    padding: 12px;
+                }
            .left-side-banner{  
             @include respond(tab) {
                margin-left: 12px !important;
             }
+            @include respond(mobile) {
+                &{
+                    span{
+                        line-height: 50px !important;
+                    }
+                }
+             }
         }
 
-           @include respond(tab) {
-            width: 426px;
-            padding: 12px;
+           
+
+         @include respond(mobile) {
+            width: 100%;
+            display: block;
+            text-align: center;
          }
 
          .clearfix::after{
@@ -221,24 +408,31 @@ nav{
                         @include respond(tab) {
                         margin: 10px 0;
                         }
+                        @include respond(mobile) {
+                                span{
+                                    line-height: 50px !important;
+                                }
+                            }
                     }
                 >div{
-                    width: 239px;
-                    height: 240px;
+                    width: 31.9%;
                     float: left;
                     margin-bottom: 16px;
 
                     @include respond(tab) {
-                        width: 207px;
-                        height: 210px;
+                        width: 48%;
                         margin: 0px;
+                     }
+
+                     @include respond(mobile) {
+                        width: 47.9%;
                      }
 
                     &:first-child,&.featured,&.clean{
                         position: relative;
 
                         span{
-                            width: 239px;
+                            width: 100%;
                             text-align: center;
                             height: 50px;
                             line-height: 50px;
@@ -254,8 +448,14 @@ nav{
                                     box-sizing: border-box;
                                     
                             @include respond(tab) {
-                                width: 207px;
+                                width: 100%;
                                 }
+
+                                @include respond(mobile) {
+                                    width: 100%;
+                                    font-size: 16px;
+                                    line-height: 21px;
+                                 }
                         }
                     }
                     
@@ -275,7 +475,7 @@ nav{
                             }
 
                         span{
-                            width: 239px;
+                            width: 100%;
                             text-align: center;
                             height: 50px;
                             line-height: 50px;
@@ -291,15 +491,20 @@ nav{
                                     box-sizing: border-box;
                             
                                 @include respond(tab) {
-                                    width: 207px;
+                                    width: 100%;
                                 }
+
+                                @include respond(mobile) {
+                                    width: 100%;
+                                    font-size: 16px;
+                                 }
                         }
                     }
                     &:last-child{
                         position: relative;
 
                         span{
-                            width: 239px;
+                            width: 100%;
                             text-align: center;
                             height: 50px;
                             line-height: 50px;
@@ -315,8 +520,13 @@ nav{
                                     box-sizing: border-box;
                             
                             @include respond(tab) {
-                                width: 207px;
+                                width: 100%;
                             }
+
+                            @include respond(mobile) {
+                                width: 100%;
+                                font-size: 16px;
+                             }
                         }
                     }
                 }
@@ -327,6 +537,10 @@ nav{
 
        .centralizer{
            padding-top: 10px;
+
+           @include respond(mobile) {
+            padding: 0;
+        }
        }
 
 
@@ -337,13 +551,27 @@ nav{
 // Section
 section{
     margin-top: 49px;
-    padding-bottom: 42px;
+    padding-bottom: 50px;
     overflow: hidden;
     position: relative;
 
     .centralizer {
         position: relative;
         z-index: 2;
+
+        .supply{
+            display: none;
+            margin: 66px 0 0 0;
+            padding: 0;
+            font-weight: lighter;
+            font-size: 29px;
+            color: #81c979;
+
+            @include respond(mobile) {
+                display: block;
+                text-align: center;
+             }
+        }
     }
 
     // position: relative;
@@ -369,7 +597,7 @@ section{
 
     &:after {
         background: #fff;
-        bottom: 20px;
+        bottom: 21px;
         border: none;
     }
 
@@ -377,11 +605,18 @@ section{
    .ipp{
        float: left;
        margin-left: 46px;
-       width: 271px;
+       width: 25%;
        position: relative;
+
        @include respond(tab) {
-        width: 206px;
+
         margin-left: 30px;
+     }
+
+     @include respond(mobile) {
+        width: 100%;
+        float: none;
+        display: block;
      }
 
        h1{
@@ -404,17 +639,16 @@ section{
 
                 >div{
                     margin: 0;
-                    display: inline-block;
-                    vertical-align: middle;
-                    letter-spacing: -4px;
+                    display: block;
                     
                     h3{
                         font-size: 16px;
                         color: #005b94;
                         font-weight: normal;
                         letter-spacing: 0;
-                        width: 271px;
+                        
                     }
+
                     p{
                         line-height: 15px;
                         letter-spacing: 0;
@@ -455,16 +689,30 @@ section{
    }
    .newletter{
     float: left;
-    margin: 0 95px;
-    width: 248px;
+    margin: 0 75px;
+    width: 25%;
+
     @include respond(tab) {
-        width:206px;
-        margin: 0 62px;
+
+        margin: 0 81px;
+     }
+
+     @include respond(mobile) {
+        float: none;
+        display: block;
+        width: 80%;
+        margin:10px 0 0 30px;
+        padding: 30px 0;
+        border-top: 1px solid #dcdcdc;
+        border-bottom: 1px solid #dcdcdc;
      }
 
         h1{
             color: #595959;
            font-size: 18px;
+           @include respond(mobile) {
+            font-size: 16px;
+         }
         }
         p{
             font-size: 13px;
@@ -479,7 +727,7 @@ section{
 
                 @include respond(tab) {
                     padding: 10px;
-                    width: 159px;
+                    width: 77%;
                     -webkit-box-sizing: border-box;
                             box-sizing: border-box;
                  }
@@ -526,12 +774,19 @@ section{
     }  
     .testiminial{
         float: right;
-        width: 209px;
+        width: 25%;
         margin-right: 60px;
         position: relative;
         @include respond(tab) {
-            width: 202px;
+        
             margin-right: 0;
+         }
+
+         @include respond(mobile) {
+            float: none;
+            width: 60%;
+            display: block;
+            margin:60px 0 0 30px;
          }
 
         .owl-dots{
@@ -544,6 +799,9 @@ section{
         h1{
             color: #595959;
             font-size: 18px;
+            @include respond(mobile) {
+                font-size: 16px;
+             }
         }
         p{
             font-size: 13px;
@@ -578,8 +836,24 @@ footer{
             margin: 35px 0 0 0;
             padding: 0;
 
+            br{
+                display: none;
+
+                @include respond(mobile) {
+                    display: block;
+     
+                  }
+            }
+
             @include respond(tab) {
                 margin: 30px 0 0 20px;
+
+             }
+
+             @include respond(mobile) {
+               float: none;
+               display: block;
+               text-align: center;
 
              }
 
@@ -611,20 +885,43 @@ footer{
                     text-decoration: none;
                     font-size: 13px;
                     font-weight: normal;
+
+                    @include respond(mobile) {
+                        display: block;
+                        line-height: 23px;
+                      }
                 }
+
+                @include respond(mobile) {
+                    small{
+                        display: none;
+                    }
+                  }
             }
         }
         .social-links{
             float: right;
-            margin: 35px 0 0 0;
+            margin: 20px 0 0 0;
 
             @include respond(tab) {
                 margin: 30px 20px 0 0;
+             }
+
+             @include respond(mobile) {
+               float:none;
+               display: block;
+               text-align: center;
+               margin:23px 0 0 0;
              }
     
             .social{
                 float: right;
                 margin: 0;
+
+                @include respond(mobile) {
+                    float:none;
+                  }
+
                 a{
                     color: #fff;
                     text-decoration: none;
@@ -634,6 +931,10 @@ footer{
                     }
                     &:not(:first-child){
                         margin-left: 30px;
+                    }
+
+                    &:hover{
+                        color: #55ba47;
                     }
                 }
             }
@@ -648,6 +949,12 @@ footer{
                     margin: 43px 0 50px 0;
                  }
 
+                 @include respond(mobile) {
+                   display: none;
+                 }
+
+
+
                 
 
                 img{
@@ -658,6 +965,31 @@ footer{
                 }
 
             }
+        }
+
+        .dev{
+            display: none;
+            margin: 28px 0 20px 0;
+            float: none;
+            opacity: .4;
+            text-transform: uppercase;
+
+             @include respond(mobile) {
+               color: #55ba47;
+               display: block;
+             }
+
+
+
+            
+
+            img{
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 4px;
+                
+            }
+
         }
     }
    
