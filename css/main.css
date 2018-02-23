@@ -217,9 +217,8 @@ nav {
     .banner__left div {
       border-bottom: 1px solid #053b5b;
       padding: 32px 0; }
-      @media only screen and (max-width: 70em) {
-        .banner__left div:hover {
-          background: #00518a; } }
+      .banner__left div:hover {
+        background: #00518a; }
       @media only screen and (max-width: 70em) {
         .banner__left div {
           padding: 47px 0 47px 53px; } }
@@ -277,25 +276,25 @@ nav {
       .banner__right .clearfix::after {
         display: inline-block; } }
     @media only screen and (max-width: 70em) {
-      .banner__right--top .bottom {
+      .banner__right .bottom {
         margin: 10px 0; } }
     @media only screen and (max-width: 47.9375em) {
-      .banner__right--top .bottom span {
+      .banner__right .bottom span {
         line-height: 50px !important; } }
-    .banner__right--top > div {
+    .banner__right > div {
       width: 31.9%;
       float: left;
       margin-bottom: 16px; }
       @media only screen and (max-width: 70em) {
-        .banner__right--top > div {
+        .banner__right > div {
           width: 48%;
           margin: 0px; } }
       @media only screen and (max-width: 47.9375em) {
-        .banner__right--top > div {
+        .banner__right > div {
           width: 47.9%; } }
-      .banner__right--top > div:first-child, .banner__right--top > div.featured, .banner__right--top > div.clean {
+      .banner__right > div:first-child, .banner__right > div.featured, .banner__right > div.clean {
         position: relative; }
-        .banner__right--top > div:first-child span, .banner__right--top > div.featured span, .banner__right--top > div.clean span {
+        .banner__right > div:first-child span, .banner__right > div.featured span, .banner__right > div.clean span {
           width: 100%;
           text-align: center;
           height: 50px;
@@ -311,23 +310,22 @@ nav {
           -webkit-box-sizing: border-box;
           box-sizing: border-box; }
           @media only screen and (max-width: 70em) {
-            .banner__right--top > div:first-child span, .banner__right--top > div.featured span, .banner__right--top > div.clean span {
+            .banner__right > div:first-child span, .banner__right > div.featured span, .banner__right > div.clean span {
               width: 100%; } }
           @media only screen and (max-width: 47.9375em) {
-            .banner__right--top > div:first-child span, .banner__right--top > div.featured span, .banner__right--top > div.clean span {
+            .banner__right > div:first-child span, .banner__right > div.featured span, .banner__right > div.clean span {
               width: 100%;
               font-size: 16px;
               line-height: 21px; } }
-      .banner__right--top > div img {
-        width: 100%;
-        height: 100%; }
-      .banner__right--top > div.middle {
+      .banner__right > div img {
+        width: 100%; }
+      .banner__right > div.middle {
         position: relative;
         margin: 0 15px; }
         @media only screen and (max-width: 70em) {
-          .banner__right--top > div.middle {
+          .banner__right > div.middle {
             margin: 0; } }
-        .banner__right--top > div.middle span {
+        .banner__right > div.middle span {
           width: 100%;
           text-align: center;
           height: 50px;
@@ -343,15 +341,15 @@ nav {
           -webkit-box-sizing: border-box;
           box-sizing: border-box; }
           @media only screen and (max-width: 70em) {
-            .banner__right--top > div.middle span {
+            .banner__right > div.middle span {
               width: 100%; } }
           @media only screen and (max-width: 47.9375em) {
-            .banner__right--top > div.middle span {
+            .banner__right > div.middle span {
               width: 100%;
               font-size: 16px; } }
-      .banner__right--top > div:last-child {
+      .banner__right > div:last-child {
         position: relative; }
-        .banner__right--top > div:last-child span {
+        .banner__right > div:last-child span {
           width: 100%;
           text-align: center;
           height: 50px;
@@ -367,10 +365,10 @@ nav {
           -webkit-box-sizing: border-box;
           box-sizing: border-box; }
           @media only screen and (max-width: 70em) {
-            .banner__right--top > div:last-child span {
+            .banner__right > div:last-child span {
               width: 100%; } }
           @media only screen and (max-width: 47.9375em) {
-            .banner__right--top > div:last-child span {
+            .banner__right > div:last-child span {
               width: 100%;
               font-size: 16px; } }
   .banner .centralizer {
@@ -380,7 +378,7 @@ nav {
         padding: 0; } }
 
 section {
-  margin-top: 49px;
+  margin-top: 48px;
   padding-bottom: 50px;
   overflow: hidden;
   position: relative; }
@@ -496,44 +494,46 @@ section {
       font-size: 13px;
       margin-top: 17px;
       line-height: 15px; }
-    section .newletter div input {
-      padding: 11px; }
-      @media only screen and (max-width: 70em) {
-        section .newletter div input {
-          padding: 10px;
-          width: 77%;
-          -webkit-box-sizing: border-box;
-          box-sizing: border-box; } }
-    section .newletter div .arrow {
-      display: inline-block;
-      background: #55ba47;
-      width: 42px;
-      height: 42px;
-      position: relative;
-      content: '';
-      top: 16px;
-      left: -6px; }
-      @media only screen and (max-width: 70em) {
-        section .newletter div .arrow {
-          width: 39px;
-          height: 39px;
-          top: 14px; } }
-      section .newletter div .arrow::before {
-        border-left: 10px solid #fff;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        position: absolute;
+    section .newletter div {
+      width: 100%; }
+      section .newletter div input {
+        padding: 11px; }
+        @media only screen and (max-width: 70em) {
+          section .newletter div input {
+            padding: 9px;
+            width: 70%;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box; } }
+      section .newletter div .arrow {
+        display: inline-block;
+        background: #55ba47;
+        width: 42px;
+        height: 42px;
+        position: relative;
         content: '';
-        right: 14px;
-        top: 11px; }
-      section .newletter div .arrow::after {
-        border-left: 10px solid #55ba47;
-        border-top: 10px solid transparent;
-        border-bottom: 10px solid transparent;
-        position: absolute;
-        content: '';
-        right: 16px;
-        top: 11px; }
+        top: 16px;
+        left: -6px; }
+        @media only screen and (max-width: 70em) {
+          section .newletter div .arrow {
+            width: 39px;
+            height: 39px;
+            top: 15px; } }
+        section .newletter div .arrow::before {
+          border-left: 10px solid #fff;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          position: absolute;
+          content: '';
+          right: 14px;
+          top: 11px; }
+        section .newletter div .arrow::after {
+          border-left: 10px solid #55ba47;
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          position: absolute;
+          content: '';
+          right: 16px;
+          top: 11px; }
   section .testiminial {
     float: right;
     width: 25%;

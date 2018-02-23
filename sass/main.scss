@@ -311,9 +311,10 @@ nav{
                padding: 32px 0;
 
                &:hover{
-                @include respond(tab) {
+
                     background: #00518a;
-                 }
+
+                    
                }
 
                @include respond(tab) {
@@ -402,8 +403,8 @@ nav{
                 display: inline-block;
             }
          }
-           &--top{
-            //    margin-bottom: 16px;
+
+         
                     .bottom{
                         @include respond(tab) {
                         margin: 10px 0;
@@ -462,7 +463,7 @@ nav{
 
                     img{
                         width: 100%;
-                        height: 100%;
+                        
                        
                     }
 
@@ -530,7 +531,6 @@ nav{
                         }
                     }
                 }
-           }
 
         
        }
@@ -550,7 +550,7 @@ nav{
 ///////////////////
 // Section
 section{
-    margin-top: 49px;
+    margin-top: 48px;
     padding-bottom: 50px;
     overflow: hidden;
     position: relative;
@@ -722,12 +722,13 @@ section{
 
         div{
 
+        width: 100%;
             input{
                 padding: 11px;
 
                 @include respond(tab) {
-                    padding: 10px;
-                    width: 77%;
+                    padding: 9px;
+                    width: 70%;
                     -webkit-box-sizing: border-box;
                             box-sizing: border-box;
                  }
@@ -747,7 +748,7 @@ section{
                 @include respond(tab) {
                     width: 39px;
                     height: 39px;
-                    top: 14px;
+                    top: 15px;
                  }
 
                 &::before{
