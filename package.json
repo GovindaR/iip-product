@@ -6,11 +6,18 @@
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/main.css -w",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver watch:sass"
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/main.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/main.comp.css css/reset.css",
+    "compress:css": "node-sass  css/main.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css compress:css"
   },
   "author": "Govinda",
   "license": "ISC",
   "devDependencies": {
+    "compile": "0.0.2",
+    "compress": "^0.99.0",
+    "concat": "^1.0.3",
     "node-sass": "^4.7.2"
   },
   "dependencies": {
